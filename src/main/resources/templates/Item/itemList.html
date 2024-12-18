@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아이템 목록</title>
+</head>
+<body>
+<h1>아이템 목록</h1>
+<table>
+  <thead>
+  <tr>
+    <th>상품명</th>
+    <th>가격</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- 아이템 목록을 반복하여 표시 -->
+  <tr th:each="item : ${items}">
+    <td th:text="${item.name}"></td>
+    <td th:text="${item.price}"></td>
+  </tr>
+  </tbody>
+</table>
+<a href="/item/new">새 아이템 등록</a>
+</body>
+</html>
