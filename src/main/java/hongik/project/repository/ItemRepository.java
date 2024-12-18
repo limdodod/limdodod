@@ -29,4 +29,12 @@ public class ItemRepository {
         return em.createQuery("select i from Item i", Item.class).getResultList();
 
     }
+
+    // 아이템 삭제
+    public void delete(Long id) {
+        Item item = em.find(Item.class, id); // ID로 아이템 조회
+        if (item != null) {
+            em.remove(item); // 아이템 삭제
+        }
+    }
 }

@@ -3,13 +3,11 @@ package hongik.project.controller;
 import hongik.project.domain.Item;
 import hongik.project.repository.ItemRepository;
 import hongik.project.service.ItemService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -36,7 +34,7 @@ public class ItemController {
         return "redirect:/items"; // 등록 완료 후 아이템 목록 페이지로
     }
 
-    // 아이템 목록 조회 메서드
+    // 아이템 목록 조회
     @GetMapping(value="/items")
     public String list(Model model) {
         List<Item> items = itemService.findItems(); // 아이템 목록 조회
@@ -45,4 +43,12 @@ public class ItemController {
     }
 
 
+    // 아이템 삭제 처리
+    @PostMapping("item/{id}/delete")
+    public String delete(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        itemService.deleteItem(id);
+        redirectAttributes.addFlashAttribute("message", "아이템이 성공적으로 삭제되었습니다.");
+        return "redirect:/items";  // 아이템 목록으로 리다이렉트
+
+    }
 }

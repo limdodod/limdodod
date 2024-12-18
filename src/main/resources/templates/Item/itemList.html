@@ -15,10 +15,14 @@
   </tr>
   </thead>
   <tbody>
-  <!-- 아이템 목록을 반복하여 표시 -->
   <tr th:each="item : ${items}">
     <td th:text="${item.name}"></td>
     <td th:text="${item.price}"></td>
+    <td>
+      <form th:action="@{'/item/' + ${item.id} + '/delete'}" method="post">
+        <button type="submit">삭제</button>
+      </form>
+    </td>
   </tr>
   </tbody>
 </table>

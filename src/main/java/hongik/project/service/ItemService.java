@@ -25,7 +25,19 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
-    public Item findOne(Long itemId) {
-        return itemRepository.findOne(itemId);
+    public Item findOne(Long product_id) {
+        return itemRepository.findOne(product_id);
     }
+
+    // 아이템 삭제
+    @Transactional
+    public void deleteItem(Long id) {
+        Item item = itemRepository.findOne(id);
+        if (item == null) {
+            throw new IllegalArgumentException("아이템을 찾을 수 없습니다.");
+        }
+        itemRepository.delete(id);
+    }
+
 }
+

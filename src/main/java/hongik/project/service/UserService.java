@@ -44,7 +44,7 @@ public class UserService {
                 return user;  // 로그인 성공
             }
         }
-        return null;  // 로그인 실패패
+        return null;  // 로그인 실패
     }
 
     //회원 전체 조회
