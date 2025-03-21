@@ -1,13 +1,14 @@
-# 🌟 Welcome to My GitHub! 🌟
+# 🌟 Welcome to Lim Do Hyun's GitHub! 🌟
 
-👋 **안녕하세요!** 저는 **임도현**입니다.  
-💻 **백엔드 개발자**  
+💻 **Backend Developer**  
 
 ---
 
 ## 🚀 About Me
 - 🎓 **홍익대학교 컴퓨터공학과**
-- 🌱 **Spring Boot, MySQL, AWS, Docker 학습 중**
+- 🌱 **Spring Boot, MySQL, AWS, Docker**
+
+
 
 ## 📊 My GitHub Stats  
 ![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=limdodod&show_icons=true&theme=tokyonight)
